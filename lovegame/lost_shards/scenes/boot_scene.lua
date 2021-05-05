@@ -11,7 +11,7 @@ end
 
 function BootScene:load()
   self.time = love.timer.getTime()
-  self.timeLimit = self.time + 5
+  self.timeLimit = self.time + 1
 
   -- set window to fullscreen for retroid
   if (love.system.getOS() == 'Android') then
@@ -22,7 +22,7 @@ end
 function BootScene:update()
   self.time = love.timer.getTime()
   if (self.time > self.timeLimit) then
-    self.katalyst.sceneManager:start('main_menu')
+    self.katalyst.scenes:start('main_menu')
   end
 end
 
